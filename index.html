@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Keto - Adelgazar Saludablemente</title>
+    <title>Plan Antiinflamatorio - Adelgazar Saludablemente</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -448,6 +448,100 @@
             color: var(--red-light);
         }
         
+        /* Shopping List Section */
+        .shopping-section {
+            margin-bottom: 48px;
+        }
+        
+        .shopping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .shopping-card {
+            background: var(--white);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        
+        .shopping-card:hover {
+            border-color: var(--gray-4);
+            transform: translateY(-1px);
+        }
+        
+        .shopping-header {
+            background: var(--gray-1);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--gray-3);
+        }
+        
+        .shopping-icon {
+            font-size: 20px;
+        }
+        
+        .shopping-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-9);
+            margin: 0;
+        }
+        
+        .shopping-list {
+            padding: 20px;
+        }
+        
+        .shopping-item {
+            font-size: 13px;
+            color: var(--gray-8);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .shopping-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .shopping-notes {
+            background: var(--gray-1);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+        
+        .notes-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-9);
+            margin-bottom: 16px;
+        }
+        
+        .notes-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .notes-list li {
+            font-size: 13px;
+            color: var(--gray-7);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .notes-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gray-5);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -482,7 +576,7 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>Plan Keto Antiinflamatorio</h1>
+            <h1>Plan Antiinflamatorio</h1>
             <p class="subtitle">Sistema optimizado para pérdida de peso saludable</p>
         </header>
         
@@ -1120,6 +1214,141 @@
                     <h3 class="tip-title">Control</h3>
                     <p class="tip-text">Pesar alimentos las primeras semanas. No repetir porciones.</p>
                 </div>
+            </div>
+        </section>
+        
+        <!-- Shopping List Section -->
+        <section class="shopping-section">
+            <h2 class="section-title">Lista de Compras Completa</h2>
+            <div class="shopping-grid">
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🥩</span>
+                        <h3 class="shopping-title">Proteínas</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Pechugas de pollo (1 kg)</div>
+                        <div class="shopping-item">□ Carne magra (cuadril/lomo) (700g)</div>
+                        <div class="shopping-item">□ Pescado blanco (500g)</div>
+                        <div class="shopping-item">□ Salmón (200g)</div>
+                        <div class="shopping-item">□ Atún al natural (3 latas)</div>
+                        <div class="shopping-item">□ Huevos (18 unidades)</div>
+                        <div class="shopping-item">□ Jamón crudo natural (100g)</div>
+                        <div class="shopping-item">□ Yogur griego sin azúcar (500g)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🥬</span>
+                        <h3 class="shopping-title">Vegetales Frescos</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Mix de lechugas (3 bolsas)</div>
+                        <div class="shopping-item">□ Rúcula (2 atados)</div>
+                        <div class="shopping-item">□ Espinaca fresca (3 atados)</div>
+                        <div class="shopping-item">□ Acelga (2 atados)</div>
+                        <div class="shopping-item">□ Kale (opcional)</div>
+                        <div class="shopping-item">□ Brócoli (2 unidades)</div>
+                        <div class="shopping-item">□ Coliflor (1 unidad)</div>
+                        <div class="shopping-item">□ Zapallitos (4 unidades)</div>
+                        <div class="shopping-item">□ Zucchinis (3 unidades)</div>
+                        <div class="shopping-item">□ Berenjenas (2 unidades)</div>
+                        <div class="shopping-item">□ Morrones (2 rojos, 1 amarillo)</div>
+                        <div class="shopping-item">□ Tomates cherry (1 bandeja)</div>
+                        <div class="shopping-item">□ Tomates (3 unidades)</div>
+                        <div class="shopping-item">□ Pepinos (2 unidades)</div>
+                        <div class="shopping-item">□ Apio (1 atado)</div>
+                        <div class="shopping-item">□ Hongos/Champiñones (200g)</div>
+                        <div class="shopping-item">□ Puerro (1 unidad)</div>
+                        <div class="shopping-item">□ Cebolla de verdeo (1 atado)</div>
+                        <div class="shopping-item">□ Repollo colorado (1/2)</div>
+                        <div class="shopping-item">□ Repollo blanco (1/2)</div>
+                        <div class="shopping-item">□ Albahaca fresca</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🥑</span>
+                        <h3 class="shopping-title">Grasas y Lácteos</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Paltas (3 unidades)</div>
+                        <div class="shopping-item">□ Aceite de oliva extra virgen (500ml)</div>
+                        <div class="shopping-item">□ Aceitunas negras (1 frasco)</div>
+                        <div class="shopping-item">□ Queso ricota sin lactosa (200g)</div>
+                        <div class="shopping-item">□ Queso sin lactosa rallado (150g)</div>
+                        <div class="shopping-item">□ Queso crema sin lactosa (100g)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🌰</span>
+                        <h3 class="shopping-title">Frutos Secos y Semillas</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Almendras (200g)</div>
+                        <div class="shopping-item">□ Nueces (150g)</div>
+                        <div class="shopping-item">□ Mix de frutos secos (100g)</div>
+                        <div class="shopping-item">□ Semillas de girasol (100g)</div>
+                        <div class="shopping-item">□ Semillas de calabaza (100g)</div>
+                        <div class="shopping-item">□ Semillas de sésamo (100g)</div>
+                        <div class="shopping-item">□ Semillas de chía (100g)</div>
+                        <div class="shopping-item">□ Frutos rojos (200g)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🍞</span>
+                        <h3 class="shopping-title">Vegetales Moderados</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Zanahoria (3 unidades)</div>
+                        <div class="shopping-item">□ Boniato (2 pequeños)</div>
+                        <div class="shopping-item">□ Calabaza (1/4 unidad)</div>
+                        <div class="shopping-item">□ Harina de almendras (250g)</div>
+                        <div class="shopping-item">□ Pan de almendras (o ingredientes)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🧂</span>
+                        <h3 class="shopping-title">Condimentos y Otros</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Sal marina</div>
+                        <div class="shopping-item">□ Pimienta negra</div>
+                        <div class="shopping-item">□ Orégano seco</div>
+                        <div class="shopping-item">□ Pimentón dulce</div>
+                        <div class="shopping-item">□ Especias variadas</div>
+                        <div class="shopping-item">□ Jengibre fresco</div>
+                        <div class="shopping-item">□ Limones (8 unidades)</div>
+                        <div class="shopping-item">□ Vinagre de manzana</div>
+                        <div class="shopping-item">□ Mostaza antigua</div>
+                        <div class="shopping-item">□ Salsa de soja baja en sodio</div>
+                        <div class="shopping-item">□ Café</div>
+                        <div class="shopping-item">□ Té verde</div>
+                        <div class="shopping-item">□ Infusión de hibisco</div>
+                        <div class="shopping-item">□ Mate</div>
+                        <div class="shopping-item">□ Canela en rama</div>
+                        <div class="shopping-item">□ Menta fresca</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="shopping-notes">
+                <h3 class="notes-title">📝 Notas de Compra</h3>
+                <ul class="notes-list">
+                    <li>Las cantidades son para 1 persona por 7 días</li>
+                    <li>Ajustar según número de comensales</li>
+                    <li>Priorizar productos frescos y de temporada</li>
+                    <li>Comprar proteínas en 2 tandas para mantener frescura</li>
+                    <li>Los vegetales de hoja se pueden lavar y guardar secos</li>
+                </ul>
             </div>
         </section>
     </div>
