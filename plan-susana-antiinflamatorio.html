@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Antiinflamatorio - Susana Larghero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-1: #fafafa;
+            --gray-2: #f5f5f5;
+            --gray-3: #eeeeee;
+            --gray-4: #e5e5e5;
+            --gray-5: #d4d4d4;
+            --gray-6: #a3a3a3;
+            --gray-7: #737373;
+            --gray-8: #525252;
+            --gray-9: #404040;
+            --gray-10: #262626;
+            --gray-11: #171717;
+            --gray-12: #0a0a0a;
+            
+            --blue: #0070f3;
+            --blue-light: #3291ff;
+            --blue-lighter: #79b8ff;
+            --green: #0cce6b;
+            --green-light: #19e97f;
+            --orange: #ff6a00;
+            --red: #ff0000;
+            --red-light: #ff4444;
+            --purple: #7928ca;
+            --purple-light: #8a63d2;
+            
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--gray-11);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        /* Header personalizado */
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding: 48px 0;
+            border-bottom: 1px solid var(--gray-3);
+            background: linear-gradient(to bottom, var(--white) 0%, var(--gray-1) 100%);
+        }
+        
+        .patient-info {
+            background: var(--white);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .patient-item {
+            text-align: center;
+        }
+        
+        .patient-label {
+            font-size: 12px;
+            color: var(--gray-6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .patient-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, var(--purple) 0%, var(--purple-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--gray-7);
+            letter-spacing: -0.02em;
+        }
+        
+        /* Clinical Alert Box */
+        .clinical-alert {
+            background: linear-gradient(135deg, rgba(255, 106, 0, 0.1) 0%, rgba(255, 106, 0, 0.05) 100%);
+            border: 2px solid var(--orange);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .clinical-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .clinical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .clinical-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            border: 1px solid rgba(255, 106, 0, 0.2);
+        }
+        
+        .clinical-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+        }
+        
+        .clinical-desc {
+            font-size: 12px;
+            color: var(--gray-7);
+            margin-top: 4px;
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+        
+        .stat-card {
+            background: var(--gray-1);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: var(--gray-4);
+            transform: translateY(-1px);
+        }
+        
+        .stat-card.highlight {
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.1) 0%, rgba(121, 40, 202, 0.05) 100%);
+            border-color: var(--purple-light);
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Day Cards Grid */
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .day-card {
+            background: var(--white);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .day-card:hover {
+            border-color: var(--gray-4);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .day-header {
+            background: var(--purple);
+            color: var(--white);
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .calories-badge {
+            background: var(--white);
+            color: var(--purple);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .day-content {
+            padding: 24px;
+        }
+        
+        /* Meals */
+        .meal {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-3);
+        }
+        
+        .meal:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .meal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .meal-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gray-8);
+        }
+        
+        .meal-time {
+            font-size: 11px;
+            color: var(--gray-6);
+            font-weight: 500;
+        }
+        
+        .meal-calories {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-6);
+        }
+        
+        .meal-items {
+            font-size: 13px;
+            color: var(--gray-9);
+            line-height: 1.8;
+        }
+        
+        .meal-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        
+        .meal-item::before {
+            content: "→";
+            color: var(--gray-5);
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        
+        .portion {
+            color: var(--purple);
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        /* Omega-3 highlight */
+        .omega-highlight {
+            background: linear-gradient(135deg, rgba(12, 206, 107, 0.1) 0%, rgba(12, 206, 107, 0.05) 100%);
+            border-left: 3px solid var(--green);
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            color: var(--gray-8);
+        }
+        
+        .omega-label {
+            font-weight: 600;
+            color: var(--green);
+        }
+        
+        /* Substitution Box */
+        .substitution {
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.1) 0%, rgba(121, 40, 202, 0.05) 100%);
+            border: 1px solid rgba(121, 40, 202, 0.2);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--gray-9);
+        }
+        
+        .substitution-label {
+            font-weight: 600;
+            color: var(--purple);
+            margin-right: 4px;
+        }
+        
+        /* Day Footer */
+        .day-footer {
+            background: var(--gray-1);
+            padding: 16px 24px;
+            border-top: 1px solid var(--gray-3);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .footer-item {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: var(--gray-7);
+        }
+        
+        .footer-icon {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        
+        /* Treatment Guidelines */
+        .treatment-section {
+            background: linear-gradient(135deg, var(--gray-1) 0%, var(--white) 100%);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+            text-align: center;
+            color: var(--purple);
+        }
+        
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .treatment-card {
+            background: var(--white);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: all 0.2s ease;
+        }
+        
+        .treatment-card:hover {
+            border-color: var(--purple-light);
+            transform: translateY(-1px);
+        }
+        
+        .treatment-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        
+        .treatment-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+        
+        .treatment-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .treatment-list li {
+            font-size: 13px;
+            color: var(--gray-7);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .treatment-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+        
+        /* Supplement Section */
+        .supplement-section {
+            margin-bottom: 48px;
+        }
+        
+        .supplement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .supplement-card {
+            background: var(--white);
+            border: 2px solid var(--purple-light);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .supplement-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-1px);
+        }
+        
+        .supplement-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+        
+        .supplement-dose {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+        
+        .supplement-timing {
+            font-size: 12px;
+            color: var(--gray-6);
+        }
+        
+        /* Shopping List */
+        .shopping-section {
+            margin-bottom: 48px;
+        }
+        
+        .shopping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .shopping-card {
+            background: var(--white);
+            border: 1px solid var(--gray-3);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        
+        .shopping-card:hover {
+            border-color: var(--gray-4);
+            transform: translateY(-1px);
+        }
+        
+        .shopping-header {
+            background: var(--purple-light);
+            color: var(--white);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--gray-3);
+        }
+        
+        .shopping-icon {
+            font-size: 20px;
+        }
+        
+        .shopping-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .shopping-list {
+            padding: 20px;
+        }
+        
+        .shopping-item {
+            font-size: 13px;
+            color: var(--gray-8);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .highlight-item {
+            font-weight: 600;
+            color: var(--purple);
+        }
+        
+        /* Alert Box */
+        .alert {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0.05) 100%);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .alert-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .week-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .treatment-section {
+                padding: 24px;
+            }
+            
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header personalizado -->
+        <header class="header">
+            <h1>Plan Antiinflamatorio Personalizado</h1>
+            <p class="subtitle">Protocolo para reducción de colesterol LDL y optimización metabólica</p>
+        </header>
+        
+        <!-- Patient Info -->
+        <div class="patient-info">
+            <div class="patient-item">
+                <div class="patient-label">Paciente</div>
+                <div class="patient-value">Susana Larghero</div>
+            </div>
+            <div class="patient-item">
+                <div class="patient-label">Edad</div>
+                <div class="patient-value">70 años</div>
+            </div>
+            <div class="patient-item">
+                <div class="patient-label">Fecha</div>
+                <div class="patient-value">Junio 2025</div>
+            </div>
+            <div class="patient-item">
+                <div class="patient-label">Objetivo</div>
+                <div class="patient-value">Reducir LDL</div>
+            </div>
+        </div>
+        
+        <!-- Clinical Alert -->
+        <div class="clinical-alert">
+            <h3 class="clinical-title">
+                <span style="margin-right: 8px;">⚠️</span>
+                Valores Clínicos Relevantes
+            </h3>
+            <div class="clinical-grid">
+                <div class="clinical-item">
+                    <div class="clinical-value">300 mg/dl</div>
+                    <div class="clinical-desc">LDL Colesterol (Alto)</div>
+                </div>
+                <div class="clinical-item">
+                    <div class="clinical-value">0.40 uU/mL</div>
+                    <div class="clinical-desc">Insulina (Muy Baja)</div>
+                </div>
+                <div class="clinical-item">
+                    <div class="clinical-value">98 mg/dl</div>
+                    <div class="clinical-desc">Glucemia (Normal)</div>
+                </div>
+                <div class="clinical-item">
+                    <div class="clinical-value">48.7 ng/ml</div>
+                    <div class="clinical-desc">Vitamina D (Óptima)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Bar modificado -->
+        <div class="stats-bar">
+            <div class="stat-card highlight">
+                <div class="stat-number">1000-1200</div>
+                <div class="stat-label">Calorías Diarias</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11h</div>
+                <div class="stat-label">Ventana Alimentación</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3x</div>
+                <div class="stat-label">Pescado Semanal</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">< 30g</div>
+                <div class="stat-label">Carbohidratos</div>
+            </div>
+        </div>
+        
+        <!-- Day Cards -->
+        <div class="week-grid">
+            <!-- Día 1 - Lunes -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 1 - Lunes</span>
+                    <span class="calories-badge">1150 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">300 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">2 huevos revueltos en aceite de oliva</div>
+                            <div class="meal-item">Espinaca salteada <span class="portion">(abundante)</span></div>
+                            <div class="meal-item">5 almendras</div>
+                            <div class="meal-item">Té verde sin azúcar</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">13:30</span>
+                            </div>
+                            <span class="meal-calories">450 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Salmón al horno <span class="portion">(120g)</span></div>
+                            <div class="meal-item">Ensalada mixta (lechuga, tomate, pepino)</div>
+                            <div class="meal-item">Brócoli al vapor</div>
+                            <div class="meal-item">1 cda aceite de oliva + limón</div>
+                        </div>
+                        <div class="omega-highlight">
+                            <span class="omega-label">Omega-3:</span> Alto contenido antiinflamatorio
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">400 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Pechuga de pollo <span class="portion">(100g)</span></div>
+                            <div class="meal-item">Mix de verdes (rúcula, espinaca)</div>
+                            <div class="meal-item">1/4 palta <span class="portion">(40g)</span></div>
+                            <div class="meal-item">Tomates cherry</div>
+                        </div>
+                        <div class="substitution">
+                            <span class="substitution-label">Alternativa:</span>
+                            2 huevos + espinaca + 30g queso magro
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">⏱</span>
+                        Ayuno: 20:00 - 9:00 (13h)
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">💧</span>
+                        8 vasos de agua + infusiones
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Día 2 - Martes -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 2 - Martes</span>
+                    <span class="calories-badge">1180 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">320 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Yogur natural sin azúcar <span class="portion">(150g)</span></div>
+                            <div class="meal-item">1 cda semillas de chía</div>
+                            <div class="meal-item">8 nueces picadas</div>
+                            <div class="meal-item">Canela en polvo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">14:00</span>
+                            </div>
+                            <span class="meal-calories">430 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Merluza a la plancha <span class="portion">(150g)</span></div>
+                            <div class="meal-item">Zapallitos salteados</div>
+                            <div class="meal-item">Ensalada verde abundante</div>
+                            <div class="meal-item">1 cda aceite de oliva + ajo</div>
+                        </div>
+                        <div class="omega-highlight">
+                            <span class="omega-label">Pescado blanco:</span> Proteína magra para colesterol
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">430 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Tortilla de espinaca (2 huevos)</div>
+                            <div class="meal-item">Ensalada de tomate y albahaca</div>
+                            <div class="meal-item">30g queso magro</div>
+                            <div class="meal-item">Aceitunas <span class="portion">(6 unidades)</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">⏱</span>
+                        Ayuno: 20:00 - 9:00 (13h)
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">🍵</span>
+                        Té verde post-comidas
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Día 3 - Miércoles -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 3 - Miércoles</span>
+                    <span class="calories-badge">1200 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">310 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">2 huevos pochados</div>
+                            <div class="meal-item">1/4 palta <span class="portion">(40g)</span></div>
+                            <div class="meal-item">Rúcula fresca</div>
+                            <div class="meal-item">Café o té sin azúcar</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">13:30</span>
+                            </div>
+                            <span class="meal-calories">480 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Salmón a la parrilla <span class="portion">(130g)</span></div>
+                            <div class="meal-item">Ensalada tibia de berenjenas</div>
+                            <div class="meal-item">Hojas verdes variadas</div>
+                            <div class="meal-item">Vinagreta de limón y mostaza</div>
+                        </div>
+                        <div class="omega-highlight">
+                            <span class="omega-label">EPA + DHA:</span> Reducción de triglicéridos
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">410 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Carne magra <span class="portion">(100g)</span></div>
+                            <div class="meal-item">Ensalada de repollo y zanahoria</div>
+                            <div class="meal-item">Champiñones salteados</div>
+                            <div class="meal-item">1 cda aceite de oliva</div>
+                        </div>
+                        <div class="substitution">
+                            <span class="substitution-label">Alternativa:</span>
+                            Pollo al limón con especias
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">⏱</span>
+                        Ventana: 9:00 - 20:00
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">🌿</span>
+                        Infusión de jengibre
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Día 4 - Jueves -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 4 - Jueves</span>
+                    <span class="calories-badge">1150 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">290 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Smoothie verde:</div>
+                            <div class="meal-item">- Espinaca + pepino</div>
+                            <div class="meal-item">- 1/2 palta pequeña</div>
+                            <div class="meal-item">- Semillas de lino <span class="portion">(1 cda)</span></div>
+                            <div class="meal-item">- Agua + limón</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">14:00</span>
+                            </div>
+                            <span class="meal-calories">450 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Pollo al horno <span class="portion">(120g)</span></div>
+                            <div class="meal-item">Ensalada mediterránea</div>
+                            <div class="meal-item">Morrones asados</div>
+                            <div class="meal-item">10 almendras laminadas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">410 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Atún fresco <span class="portion">(100g)</span></div>
+                            <div class="meal-item">Ensalada de rúcula y tomate</div>
+                            <div class="meal-item">Zapallitos grillados</div>
+                            <div class="meal-item">1 cda aceite de oliva</div>
+                        </div>
+                        <div class="omega-highlight">
+                            <span class="omega-label">Atún:</span> Rico en Omega-3 y selenio
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">⏱</span>
+                        Ayuno: 20:00 - 9:00
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">💊</span>
+                        Suplementos con almuerzo
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Día 5 - Viernes -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 5 - Viernes</span>
+                    <span class="calories-badge">1180 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">300 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">2 huevos duros</div>
+                            <div class="meal-item">Tomate en rodajas</div>
+                            <div class="meal-item">6 aceitunas verdes</div>
+                            <div class="meal-item">Té verde con jengibre</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">13:30</span>
+                            </div>
+                            <span class="meal-calories">460 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Pescado al vapor <span class="portion">(140g)</span></div>
+                            <div class="meal-item">Puré de zapallo <span class="portion">(1/2 taza)</span></div>
+                            <div class="meal-item">Ensalada verde con semillas</div>
+                            <div class="meal-item">Aceite de oliva + perejil</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">420 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Milanesa de pollo al horno <span class="portion">(100g)</span></div>
+                            <div class="meal-item">Ensalada completa</div>
+                            <div class="meal-item">1/4 palta</div>
+                            <div class="meal-item">Vinagreta de hierbas</div>
+                        </div>
+                        <div class="substitution">
+                            <span class="substitution-label">Nota:</span>
+                            Milanesa sin pan rallado o con almendras molidas
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">⏱</span>
+                        Ayuno nocturno 13h
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">🫖</span>
+                        Té de manzanilla nocturno
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Día 6 - Sábado -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 6 - Sábado</span>
+                    <span class="calories-badge">1200 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">330 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Omelette de hongos (2 huevos)</div>
+                            <div class="meal-item">30g queso magro</div>
+                            <div class="meal-item">Espinaca fresca</div>
+                            <div class="meal-item">Café sin azúcar</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">14:00</span>
+                            </div>
+                            <span class="meal-calories">470 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Salmón rosado <span class="portion">(120g)</span></div>
+                            <div class="meal-item">Brócoli gratinado (sin harina)</div>
+                            <div class="meal-item">Mix de lechugas</div>
+                            <div class="meal-item">Aderezo de yogur y hierbas</div>
+                        </div>
+                        <div class="omega-highlight">
+                            <span class="omega-label">3er pescado semanal:</span> Meta Omega-3 cumplida
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">400 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Hamburguesa casera <span class="portion">(100g)</span></div>
+                            <div class="meal-item">Envuelta en lechuga</div>
+                            <div class="meal-item">Tomate, cebolla, pepino</div>
+                            <div class="meal-item">Mostaza + 5 almendras</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">🎯</span>
+                        Día flexible del fin de semana
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">💧</span>
+                        Hidratación constante
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Día 7 - Domingo -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Día 7 - Domingo</span>
+                    <span class="calories-badge">1100 cal</span>
+                </div>
+                <div class="day-content">
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Desayuno</h3>
+                                <span class="meal-time">9:00</span>
+                            </div>
+                            <span class="meal-calories">280 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Yogur griego sin azúcar</div>
+                            <div class="meal-item">5 nueces picadas</div>
+                            <div class="meal-item">Canela y stevia</div>
+                            <div class="meal-item">Té o mate</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Almuerzo</h3>
+                                <span class="meal-time">13:30</span>
+                            </div>
+                            <span class="meal-calories">420 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Pollo al limón <span class="portion">(120g)</span></div>
+                            <div class="meal-item">Verduras al wok (sin aceite)</div>
+                            <div class="meal-item">Ensalada fresca</div>
+                            <div class="meal-item">1 cda aceite de oliva</div>
+                        </div>
+                    </div>
+                    
+                    <div class="meal">
+                        <div class="meal-header">
+                            <div>
+                                <h3 class="meal-title">Merienda-Cena</h3>
+                                <span class="meal-time">19:00</span>
+                            </div>
+                            <span class="meal-calories">400 cal</span>
+                        </div>
+                        <div class="meal-items">
+                            <div class="meal-item">Sopa de verduras casera</div>
+                            <div class="meal-item">2 huevos duros picados</div>
+                            <div class="meal-item">1/4 palta en cubitos</div>
+                            <div class="meal-item">Semillas de girasol</div>
+                        </div>
+                        <div class="substitution">
+                            <span class="substitution-label">Opción reconfortante:</span>
+                            Ideal para cerrar la semana
+                        </div>
+                    </div>
+                </div>
+                <div class="day-footer">
+                    <div class="footer-item">
+                        <span class="footer-icon">📊</span>
+                        Semana completada con éxito
+                    </div>
+                    <div class="footer-item">
+                        <span class="footer-icon">🔄</span>
+                        Preparar semana siguiente
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Treatment Guidelines -->
+        <section class="treatment-section">
+            <h2 class="section-title">Protocolo Específico para Reducción de LDL</h2>
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <div class="treatment-icon">🐟</div>
+                    <h3 class="treatment-title">Omega-3 Estratégico</h3>
+                    <ul class="treatment-list">
+                        <li>3 porciones de pescado semanal</li>
+                        <li>Priorizar salmón (120-130g)</li>
+                        <li>Alternar con pescados blancos</li>
+                        <li>Atún fresco 1 vez por semana</li>
+                        <li>EPA + DHA: 2-3g diarios objetivo</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">🥗</div>
+                    <h3 class="treatment-title">Fibra Soluble Diaria</h3>
+                    <ul class="treatment-list">
+                        <li>Verduras en TODAS las comidas</li>
+                        <li>Ensaladas abundantes primero</li>
+                        <li>Brócoli 3-4 veces/semana</li>
+                        <li>Semillas de chía/lino diarias</li>
+                        <li>Meta: 25-30g fibra/día</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">🥑</div>
+                    <h3 class="treatment-title">Grasas Monoinsaturadas</h3>
+                    <ul class="treatment-list">
+                        <li>Aceite de oliva: 2-3 cdas/día</li>
+                        <li>Palta: 1/4-1/2 unidad diaria</li>
+                        <li>Frutos secos: 25-30g máximo</li>
+                        <li>Aceitunas: 6-8 unidades</li>
+                        <li>Reemplazar grasas saturadas</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">⏰</div>
+                    <h3 class="treatment-title">Timing Metabólico</h3>
+                    <ul class="treatment-list">
+                        <li>Desayuno: 9:00 am</li>
+                        <li>Almuerzo: 13:30-14:00</li>
+                        <li>Merienda-cena: 19:00</li>
+                        <li>Ayuno nocturno: 13 horas</li>
+                        <li>Sin snacks entre comidas</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">🚫</div>
+                    <h3 class="treatment-title">Evitar Completamente</h3>
+                    <ul class="treatment-list">
+                        <li>Carbohidratos refinados</li>
+                        <li>Azúcares y edulcorantes</li>
+                        <li>Grasas trans y frituras</li>
+                        <li>Embutidos y procesados</li>
+                        <li>Alcohol en todas sus formas</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">💡</div>
+                    <h3 class="treatment-title">Consideraciones Especiales</h3>
+                    <ul class="treatment-list">
+                        <li>Insulina baja: proteína en cada comida</li>
+                        <li>Porciones moderadas (70 años)</li>
+                        <li>Masticar 20-30 veces</li>
+                        <li>Comer sentada y tranquila</li>
+                        <li>Hidratación entre comidas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Supplement Section -->
+        <section class="supplement-section">
+            <h2 class="section-title">Suplementación Recomendada</h2>
+            <div class="supplement-grid">
+                <div class="supplement-card">
+                    <div class="supplement-name">OMEGA-3</div>
+                    <div class="supplement-dose">2000 mg</div>
+                    <div class="supplement-timing">Con el almuerzo</div>
+                </div>
+                <div class="supplement-card">
+                    <div class="supplement-name">BERBERINA</div>
+                    <div class="supplement-dose">500 mg x2</div>
+                    <div class="supplement-timing">Antes de almuerzo y cena</div>
+                </div>
+                <div class="supplement-card">
+                    <div class="supplement-name">CARDO MARIANO</div>
+                    <div class="supplement-dose">300 mg</div>
+                    <div class="supplement-timing">Con el desayuno</div>
+                </div>
+                <div class="supplement-card">
+                    <div class="supplement-name">MAGNESIO</div>
+                    <div class="supplement-dose">400 mg</div>
+                    <div class="supplement-timing">Antes de dormir</div>
+                </div>
+                <div class="supplement-card">
+                    <div class="supplement-name">VITAMINA C</div>
+                    <div class="supplement-dose">1000 mg</div>
+                    <div class="supplement-timing">Con el desayuno</div>
+                </div>
+                <div class="supplement-card">
+                    <div class="supplement-name">COENZIMA Q10</div>
+                    <div class="supplement-dose">100 mg</div>
+                    <div class="supplement-timing">Con comida grasa</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Shopping List -->
+        <section class="shopping-section">
+            <h2 class="section-title">Lista de Compras Semanal</h2>
+            <div class="shopping-grid">
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🐟</span>
+                        <h3 class="shopping-title">Pescados (3x semana)</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item highlight-item">□ Salmón fresco (400g)</div>
+                        <div class="shopping-item">□ Merluza o pescado blanco (300g)</div>
+                        <div class="shopping-item">□ Atún fresco (200g)</div>
+                        <div class="shopping-item">□ Pescado a elección (200g)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🥩</span>
+                        <h3 class="shopping-title">Proteínas</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Pechugas de pollo (600g)</div>
+                        <div class="shopping-item">□ Carne magra (300g)</div>
+                        <div class="shopping-item">□ Huevos (18 unidades)</div>
+                        <div class="shopping-item">□ Yogur griego sin azúcar (500g)</div>
+                        <div class="shopping-item">□ Queso magro (200g)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🥬</span>
+                        <h3 class="shopping-title">Verduras Frescas</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item highlight-item">□ Espinaca (3 atados)</div>
+                        <div class="shopping-item highlight-item">□ Brócoli (3 unidades)</div>
+                        <div class="shopping-item">□ Lechuga variada (2 plantas)</div>
+                        <div class="shopping-item">□ Rúcula (2 atados)</div>
+                        <div class="shopping-item">□ Tomates (1 kg)</div>
+                        <div class="shopping-item">□ Pepinos (3 unidades)</div>
+                        <div class="shopping-item">□ Zapallitos (6 unidades)</div>
+                        <div class="shopping-item">□ Berenjenas (2 unidades)</div>
+                        <div class="shopping-item">□ Morrones (3 unidades)</div>
+                        <div class="shopping-item">□ Hongos frescos (300g)</div>
+                        <div class="shopping-item">□ Zapallo (1/2 unidad)</div>
+                        <div class="shopping-item">□ Repollo (1/2 unidad)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🥑</span>
+                        <h3 class="shopping-title">Grasas Saludables</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item highlight-item">□ Paltas (3-4 unidades)</div>
+                        <div class="shopping-item highlight-item">□ Aceite de oliva extra virgen</div>
+                        <div class="shopping-item">□ Almendras crudas (200g)</div>
+                        <div class="shopping-item">□ Nueces (150g)</div>
+                        <div class="shopping-item">□ Semillas de chía (100g)</div>
+                        <div class="shopping-item">□ Semillas de lino (100g)</div>
+                        <div class="shopping-item">□ Aceitunas (1 frasco)</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">🌿</span>
+                        <h3 class="shopping-title">Especias y Condimentos</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item">□ Limones (8 unidades)</div>
+                        <div class="shopping-item">□ Jengibre fresco</div>
+                        <div class="shopping-item">□ Ajo fresco</div>
+                        <div class="shopping-item">□ Perejil fresco</div>
+                        <div class="shopping-item">□ Albahaca fresca</div>
+                        <div class="shopping-item">□ Orégano seco</div>
+                        <div class="shopping-item">□ Canela en polvo</div>
+                        <div class="shopping-item">□ Cúrcuma</div>
+                        <div class="shopping-item">□ Pimienta negra</div>
+                        <div class="shopping-item">□ Sal marina</div>
+                        <div class="shopping-item">□ Vinagre de manzana</div>
+                        <div class="shopping-item">□ Mostaza</div>
+                    </div>
+                </div>
+                
+                <div class="shopping-card">
+                    <div class="shopping-header">
+                        <span class="shopping-icon">☕</span>
+                        <h3 class="shopping-title">Bebidas</h3>
+                    </div>
+                    <div class="shopping-list">
+                        <div class="shopping-item highlight-item">□ Té verde (1 caja)</div>
+                        <div class="shopping-item">□ Café de calidad</div>
+                        <div class="shopping-item">□ Té de jengibre</div>
+                        <div class="shopping-item">□ Manzanilla</div>
+                        <div class="shopping-item">□ Mate (yerba)</div>
+                        <div class="shopping-item">□ Agua mineral</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final Alert -->
+        <div class="alert">
+            <h3 class="alert-title">
+                <span style="margin-right: 8px;">📋</span>
+                Recordatorios Importantes para Susana
+            </h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0;">•</span>
+                    Control de LDL en 6-8 semanas para evaluar progreso
+                </li>
+                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0;">•</span>
+                    Mantener registro de síntomas o cambios
+                </li>
+                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0;">•</span>
+                    Hidratación constante entre comidas
+                </li>
+                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0;">•</span>
+                    Actividad física suave diaria (caminatas)
+                </li>
+                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0;">•</span>
+                    Consultar con médico antes de iniciar suplementos
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
